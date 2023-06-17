@@ -1,0 +1,264 @@
+/*!
+Theme Name: bharatpharmatech-v2
+Theme URI: http://underscores.me/
+Author: Awesh Choudhary
+Author URI: https://github.com/aweshchoudhary
+Description: This is a official Bharat Pharmatech Website
+Version: 1.0.0
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: bharatpharmatech-v2
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+bharatpharmatech-v2 is based on Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
+*/
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Generic
+	- Normalize
+	- Box sizing
+# Base
+	- Typography
+	- Elements
+	- Links
+	- Forms
+## Layouts
+# Components
+	- Navigation
+	- Posts and pages
+	- Comments
+	- Widgets
+	- Media
+	- Captions
+	- Galleries
+# plugins
+	- Jetpack infinite scroll
+# Utilities
+	- Accessibility
+	- Alignments
+
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+# Generic
+--------------------------------------------------------------*/
+/* Normalize
+--------------------------------------------- */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+	 ========================================================================== */
+@tailwind base;
+@tailwind components;
+
+html:root {
+  --primary: #cb5500;
+  --primary-hover: #813600;
+  --text-color: #000000;
+  --border: #ededed;
+}
+html.darkMode:root {
+  --primary: #cb5500;
+  --primary-hover: #813600;
+  --text-color: #ffffff;
+  --border: #474747;
+}
+
+body,
+html {
+  color: var(--text-color);
+  font-family: "Poppins", "Helvetica Neue", Helvetica;
+  transition: 0.5s all ease-in-out !important;
+}
+
+.post-thumbnail {
+  display: none !important;
+}
+
+h1 {
+  @apply md:text-3xl sm:text-2xl text-xl font-bold mb-5;
+}
+
+h3 {
+  @apply text-xl font-semibold mb-2 !important;
+}
+
+p {
+  @apply text-sm my-5;
+}
+
+h2 {
+  @apply text-2xl font-semibold my-5;
+}
+
+figcaption {
+  opacity: 0 !important;
+  position: absolute !important;
+}
+
+ul.list-style-disc {
+  list-style: disc !important;
+}
+
+input,
+textarea {
+  @apply px-3 py-2 border rounded w-full !important;
+}
+label {
+  @apply mb-2 block;
+}
+i {
+  @apply m-0 !important;
+}
+
+#header-search {
+  display: none;
+}
+#header-search .search-form {
+  @apply flex items-center gap-3 p-5 bg-white;
+}
+.search-form label {
+  @apply m-0 !important;
+}
+
+#header-search-btn:hover #header-search {
+  @apply block;
+}
+
+#mobile-search .search-form {
+  @apply flex items-center gap-3;
+}
+
+form.wpcf7-form {
+  @apply md:p-5 p-3 border rounded md:w-1/2 mx-auto md:my-10 my-5;
+}
+input[type="button"],
+.search-submit {
+  @apply md:px-5 md:py-3 px-4 py-2 text-sm w-fit flex items-center justify-center gap-3 cursor-pointer !important;
+}
+
+.wp-element-button {
+  @apply md:px-5 md:py-3 bg-primary rounded hover:bg-primaryHover text-white px-4 py-2 text-sm w-fit flex items-center justify-center gap-3 cursor-pointer !important;
+}
+
+.btn,
+.search-submit {
+  @apply md:px-5 md:py-3 px-4 py-2 text-sm w-fit flex items-center justify-center gap-3 cursor-pointer;
+}
+
+.btn-ghost {
+  @apply hover:text-black transition;
+}
+
+.btn-filled,
+input[type="button"],
+.search-submit {
+  @apply bg-primary rounded hover:bg-primaryHover text-white;
+}
+.btn-outlined {
+  @apply hover:bg-primary rounded border border-primary text-primary hover:text-white;
+}
+
+.custom-logo-link img {
+  @apply w-[200px];
+}
+
+.primary-menu-list ul {
+  @apply flex items-center h-full;
+}
+.primary-menu-list ul li {
+  line-height: 60px !important;
+  @apply relative px-3;
+}
+
+.primary-menu-list ul li:hover > ul {
+  @apply flex h-fit !important;
+}
+
+.primary-menu-list ul li a {
+  @apply hover:text-primary font-medium flex items-center justify-center gap-2;
+}
+.primary-menu-list ul li a i {
+  @apply m-0;
+}
+
+i {
+  @apply flex items-center justify-center mt-2;
+}
+
+.primary-menu-list ul li ul {
+  @apply absolute top-full h-fit left-0 bg-white border hidden min-w-[300px] flex-col items-start z-[99];
+}
+.primary-menu-list ul li ul li {
+  line-height: normal !important;
+  @apply px-5 py-3 w-full;
+}
+
+.primary-menu-list ul li ul li a {
+  @apply flex w-full items-center justify-between;
+}
+
+.primary-menu-list ul li ul li ul {
+  left: 100% !important;
+  top: 0% !important;
+  margin-top: 0%;
+}
+
+#mobile-menu ul {
+  @apply flex flex-col gap-1;
+}
+#mobile-menu ul li a {
+  @apply w-full block py-2 px-4 rounded-lg hover:bg-primary hover:text-white;
+}
+#mobile-menu ul li:hover > ul {
+  @apply h-full overflow-visible !important;
+}
+
+#mobile-menu ul.sub-menu {
+  @apply h-0 overflow-hidden w-full pl-3;
+}
+#mobile-menu ul li ul li a {
+  @apply flex items-center justify-between gap-2;
+}
+
+#mobile-menu ul li > ul li a {
+  @apply font-semibold;
+}
+#mobile-menu ul li > ul li > ul li a {
+  @apply font-normal !important;
+}
+
+#mobile-menu ul li ul li a i {
+  @apply mt-0 !important;
+}
+
+#mobile-menu-container.open {
+  @apply right-0 !important;
+}
+#mobile-menu-container.open {
+  @apply right-0 !important;
+}
+
+#mobile-menu ul .current_page_item,
+#mobile-menu ul .current-menu-item {
+  @apply text-white bg-primary rounded-lg;
+}
+.primary-menu-list ul .current_page_item > a,
+.primary-menu-list ul .current-menu-parent > a,
+.primary-menu-list ul .current-menu-item > a {
+  @apply text-primary;
+}
+
+.wp-block-search__input-1 {
+  visibility: hidden;
+}
+
+@tailwind utilities;
